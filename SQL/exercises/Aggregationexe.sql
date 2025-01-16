@@ -23,4 +23,26 @@ FROM orders;
 --Notice, this solution used both an aggregate and our mathematical operators
 
 SELECT SUM(standard_amt_usd)/SUM(standard_qty) AS standard_price_per_unit
+FROM orders;How many of the sales reps have more than 5 accounts that they manage?
+
+--How many of the sales reps have more than 5 accounts that they manage?
+
+-- Soltion 
+SELECT s.id, s.name, COUNT(*) num_accounts
+FROM accounts a
+JOIN sales_reps s
+ON s.id = a.sales_rep_id
+GROUP BY s.id, s.name
+HAVING COUNT(*) > 5
+ORDER BY num_accounts;
+
+--Write a query to display for each order, the account ID, the total amount of the order, 
+--and the level of the order - ‘Large’ or ’Small’ - depending on if the order is $3000 or more, or smaller than $3000.
+
+-- Soltion 
+SELECT account_id ID ,total_amt_usd Total_order ,
+CASE 
+WHEN total_amt_usd >3000 THEN 'Large'
+WHEN total_amt_usd <3000 THEN 'Small' 
+END AS Level 
 FROM orders;
