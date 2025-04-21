@@ -8,6 +8,7 @@ Q5:Find the standard_amt_usd per unit of standard_qty paper. Your solution shoul
 --Find the total amount of poster_qty paper ordered in the orders table.
 SELECT SUM(poster_qty) AS total_poster_sales
 FROM orders;
+ORDER BY num_accounts ;
 --Find the total amount of standard_qty paper ordered in the orders table.
 SELECT SUM(standard_qty) AS total_standard_sales
 FROM orders;
