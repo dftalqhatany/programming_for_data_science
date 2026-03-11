@@ -4,3 +4,5 @@ numpy
 matplotlib
 openai
 reportlab
+arabic-reshaper
+python-bidi
