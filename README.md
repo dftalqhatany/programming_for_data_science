@@ -272,9 +272,7 @@ This project is released under the **MIT License**.
 
 # Author
 
-Developed by:
-
-**Dalal & Hajar**
+by:**Dalal & Hajer**
 
 ---
 
