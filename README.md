@@ -276,8 +276,7 @@ Developed by:
 
 **Dalal & Hajar**
 
-AI & Data Analysis Project
-
+AI Data Quality Analyst
 ---
 
 # Summary
