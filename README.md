@@ -1,186 +1,289 @@
 # AI Data Quality Analyst 📊
 
-## 📌 Overview
+AI Data Quality Analyst is an intelligent tool that analyzes datasets and evaluates their quality before using them in reporting, analysis, or machine learning tasks.
 
-Before building reports, performing analysis, or training machine learning models, one critical question must be answered: **Is this dataset actually ready for the task?**
+The application automatically scans the dataset, detects common data issues, and provides a **readiness score (0–100)** along with **clear recommendations and visual insights** to help improve the data before using it.
 
-Many datasets appear usable but contain hidden problems:
-- Missing values that skew results
-- Duplicate rows that bias analysis
-- Inconsistent data types that break workflows
-- Extreme outliers that distort predictions
-- Poor column structure that complicates processing
+---
 
-**AI Data Quality Analyst** solves this by providing an intelligent, automated assessment of dataset readiness. It combines traditional data quality metrics with AI-powered analysis to give you a clear answer: "Is my data ready, and if not, what should I fix?"
+# Overview
 
-## 🎯 The Problem It Solves
+Data often appears clean at first glance but may contain hidden problems such as:
 
-Data professionals waste countless hours cleaning datasets, often discovering issues midway through analysis. This tool eliminates guesswork by:
+- Missing values
+- Duplicate records
+- Inconsistent data types
+- Outliers
+- Poor column structure
 
-- **Quantifying quality** with a 0-100 readiness score
-- **Contextual evaluation** based on your specific goal (reporting, analysis, or modeling)
-- **Actionable recommendations** prioritized by impact
-- **Visual insights** that highlight problems at a glance
-- **Professional documentation** via PDF reports for stakeholders
+These issues can cause incorrect results in reports, analytics, or machine learning models.
 
-## ✨ Core Features
+This project helps solve that problem by providing an **automated data quality assessment system** that evaluates datasets and generates useful insights.
 
-### 1. Smart Data Upload
-- Support for CSV and Excel formats
-- Automatic encoding detection
-- Real-time validation
+---
 
-### 2. Goal-Based Evaluation
-Three distinct assessment modes:
+# Key Features
 
-| Goal | Focus | Requirements |
-|------|-------|--------------|
-| **Build Report** | Business intelligence, dashboards | Tolerates some issues, needs clean labels |
-| **Data Analysis** | Statistical analysis, insights | Requires consistent types, reasonable completeness |
-| **Build Model** | Machine learning, predictions | Strict quality, needs numeric features, no duplicates |
+### 1. Data Quality Analysis
+The system automatically analyzes datasets and detects:
 
-### 3. Comprehensive Quality Metrics
-- **Structure Analysis**: Rows, columns, data types
-- **Missing Values**: Count, percentage, per-column breakdown
-- **Duplicate Detection**: Exact duplicates, near-duplicates
-- **Outlier Identification**: IQR-based detection with visual indicators
-- **Consistency Checks**: Data type uniformity, value distributions
+- Missing values
+- Duplicate rows
+- Outliers
+- Data type inconsistencies
+- Dataset structure issues
 
-### 4. AI-Powered Assessment
-Integrated with OpenAI to provide:
-- Executive summary of dataset quality
-- Goal-specific suitability analysis
-- Prioritized fix recommendations
-- Risk assessment for your use case
-- Answers to natural language questions
+---
+
+### 2. Readiness Scoring System
+The application calculates a **Data Readiness Score (0–100)** that indicates how suitable the dataset is for the selected task.
+
+Tasks include:
+
+- **Reporting**
+- **Data Analysis**
+- **Machine Learning**
+
+Each task has different quality requirements.
+
+---
+
+### 3. Visual Data Insights
+The system generates visual charts to help users quickly understand dataset issues:
+
+- Missing values chart
+- Data types distribution
+- Outlier visualization
+
+---
+
+### 4. AI-Powered Analysis
+The project integrates AI to generate:
+
+- Dataset summaries
+- Quality evaluation explanations
+- Practical improvement suggestions
+
+This helps users understand **why the dataset received its score**.
+
+---
 
 ### 5. Interactive Dashboard
-Real-time visualizations including:
-- Missing values heatmap
-- Data type distribution
-- Outlier charts by column
-- Quality score progress bar
-- Key metrics at a glance
+The application includes a simple dashboard that shows:
 
-### 6. Professional PDF Reports
-Generate comprehensive reports containing:
-- Dataset metadata and overview
-- Quality score and status
-- AI assessment summary
-- Recommended actions
-- Quality visualizations
-- Export-ready formatting
+- Dataset overview
+- Quality metrics
+- Charts and statistics
+- AI recommendations
 
-### 7. Multi-Language Support
-- Full English interface
-- Arabic text support (RTL, proper shaping)
-- Ready for additional language integration
+---
 
-## 🏗 Architecture
-├── 📱 Frontend (Streamlit)
-│ ├── File upload interface
-│ ├── Goal selection
-│ ├── Interactive dashboard
-│ └── Report download
+### 6. PDF Report Generation
+Users can export a **professional PDF report** containing:
+
+- Dataset summary
+- Quality score
+- Key findings
+- Visual charts
+- AI recommendations
+
+---
+
+# Project Structure
+
+```
+AI-Data-Quality-Analystv2
 │
-├── 🧠 Core Engine
-│ ├── Data quality analyzer
-│ ├── Scoring algorithm
-│ ├── Outlier detector
-│ └── Metrics calculator
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
 │
-├── 🤖 AI Integration
-│ ├── OpenAI client
-│ ├── Context builder
-│ └── Response parser
+├── fonts
+│   └── Cairo-Regular.ttf
 │
-├── 📊 Visualization
-│ ├── Chart generators
-│ ├── Dashboard components
-│ └── Interactive elements
-│
-└── 📄 Report Generator
-├── PDF builder
-├── Multi-language support
-└── Chart embedding
+└── src
+    ├── analyzer.py
+    ├── agent.py
+    ├── ai_assistant.py
+    ├── charts.py
+    ├── io_utils.py
+    └── pdf_report.py
+```
 
+### Main Components
 
-## 🚀 Installation Guide
+**app.py**
 
-### Prerequisites
-- **Python 3.10 or higher**
-- **OpenAI API key** (for AI features)
-- **Git** (optional, for cloning)
+Main application file that runs the interface and connects all modules.
 
-### Step 1: Get the Code
+**src/analyzer.py**
+
+Handles dataset quality analysis including:
+
+- Outlier detection
+- Quality scoring
+- Readiness evaluation
+
+**src/agent.py**
+
+Processes user input and prepares context for AI analysis.
+
+**src/ai_assistant.py**
+
+Handles communication with the AI model.
+
+**src/io_utils.py**
+
+Manages file reading and dataset loading.
+
+**src/charts.py**
+
+Creates visual charts for dataset insights.
+
+**src/pdf_report.py**
+
+Generates the final PDF report.
+
+---
+
+# Technologies Used
+
+The project uses several tools and libraries:
+
+- **Python**
+- **Streamlit** – interactive web interface
+- **Pandas** – data analysis
+- **Matplotlib** – charts and visualizations
+- **OpenAI API** – AI-generated insights
+- **ReportLab** – PDF report generation
+- **OpenPyXL** – Excel file support
+
+---
+
+# Installation
+
+### 1. Clone the Repository
 
 ```bash
-# Clone the repository
 git clone https://github.com/dftalqhatany/AI-Data-Quality-Analystv2.git
-
-# Navigate to project directory
 cd AI-Data-Quality-Analystv2
-# Create virtual environment
+```
+
+---
+
+### 2. Create a Virtual Environment
+
+```bash
 python -m venv venv
+```
 
-# Activate it
-# On Windows:
+Activate the environment:
+
+Windows:
+
+```bash
 venv\Scripts\activate
-# On Mac/Linux:
-source venv/bin/activate
-pip install -r requirements.txt
-# On Windows (PowerShell)
-$env:OPENAI_API_KEY="sk-your-api-key-here"
+```
 
-# On Mac/Linux
-export OPENAI_API_KEY="sk-your-api-key-here"
+Mac / Linux:
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 3. Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Set OpenAI API Key
+
+Windows (PowerShell)
+
+```bash
+$env:OPENAI_API_KEY="your_api_key"
+```
+
+Mac / Linux
+
+```bash
+export OPENAI_API_KEY="your_api_key"
+```
+
+---
+
+### 5. Run the Application
+
+```bash
 streamlit run app.py
-AI-Data-Quality-Analystv2/
-│
-├── app.py                      # Main application entry point
-│   ├── UI layout and routing
-│   ├── Session state management
-│   ├── File upload handling
-│   └── Dashboard rendering
-│
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
-├── .gitignore                  # Git ignore rules
-├── devcontainer.json           # GitHub Codespaces config
-├── sample_data.csv             # Example dataset for testing
-│
-├── fonts/                       # Font files for PDF
-│   └── Cairo-Regular.ttf       # Arabic font (auto-downloaded)
-│
-└── src/                         # Source code modules
-    │
-    ├── analyzer.py              # Core quality analysis
-    │   ├── detect_outliers()    # IQR-based outlier detection
-    │   ├── assess_readiness()   # Goal-based scoring
-    │   └── goal_recommendations() # Actionable fixes
-    │
-    ├── agent.py                  # AI task focus
-    │   ├── infer_task_focus()    # Detect user intent
-    │   ├── build_analysis_context() # Prepare AI context
-    │   └── generate_final_report() # Structure AI output
-    │
-    ├── ai_assistant.py           # OpenAI integration
-    │   ├── ask_gpt()             # Query OpenAI
-    │   └── build_prompt()        # Construct prompts
-    │
-    ├── io_utils.py               # File operations
-    │   ├── load_dataframe()      # CSV/Excel loader
-    │   └── dataframe_overview()  # Basic metrics
-    │
-    ├── charts.py                  # Visualization
-    │   ├── build_missing_chart() # Missing values bar chart
-    │   ├── build_dtype_chart()   # Data types distribution
-    │   ├── build_outlier_chart() # Outlier counts
-    │   └── fig_to_bytes()        # Convert to bytes for PDF
-    │
-    └── pdf_report.py              # PDF generation
-        ├── build_pdf_report()    # Main report builder
-        ├── register_arabic_font() # Font setup
-        ├── contains_arabic()     # Language detection
-        ├── prepare_arabic_text() # RTL text processing
-        └── draw_* functions      # PDF layout helpers
+```
+
+Then open:
+
+```
+http://localhost:8501
+```
+
+---
+
+# How to Use
+
+1. Upload a dataset (CSV or Excel).
+2. Select the analysis goal (Reporting, Analysis, or Machine Learning).
+3. Let the system analyze the dataset.
+4. View the generated insights and charts.
+5. Download the final PDF report if needed.
+
+---
+
+# Example Use Cases
+
+This tool can help with:
+
+- Preparing datasets for machine learning
+- Checking data quality before analytics projects
+- Evaluating datasets for dashboards or reports
+- Understanding dataset issues quickly
+
+---
+
+# Future Improvements
+
+Possible future features include:
+
+- Database integration
+- Automated data cleaning suggestions
+- Advanced anomaly detection
+- Multiple dataset comparison
+
+---
+
+# License
+
+This project is released under the **MIT License**.
+
+---
+
+# Author
+
+Developed by:
+
+**Dalal & Hajar**
+
+AI & Data Analysis Project
+
+---
+
+# Summary
+
+AI Data Quality Analyst provides a simple way to answer an important question:
+
+**"Is my dataset ready to be used?"**
+
+By combining **data quality checks, AI insights, visual analysis, and reporting**, the tool helps users quickly understand their data and improve it before starting analysis or model development.
